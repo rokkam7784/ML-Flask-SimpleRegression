@@ -8,16 +8,28 @@ app = Flask(__name__)
 # loading the pickle
 model = pickle.load(open('model.pkl', 'rb'))
 
-@app.route('/')
+@app.route('/',methods=['GET'])
 def hello_world():
-    return " "
+    if request.method == 'GET':
+        return " "
+    else:
+        return "Bad Request"
 
-@app.route('/YearsOfExperience/<float:yrsOfExperience>')
+
+# TODO: Make a website for this function
+@app.route('/YearsOfExperience/<yrsOfExperience>',methods=['GET'])
 def predict(yrsOfExperience):
-    prediction = model.predict([[yrsOfExperience]])
-    result = {"YearsOfExperience": yrsOfExperience,
-              "Salary": int(prediction[0])}
-    return result
+    if request.method == 'GET':
+        try:
+            yrsOfExperience = float(yrsOfExperience)
+            prediction = model.predict([[yrsOfExperience]])
+            result = {"YearsOfExperience": yrsOfExperience,
+                    "Salary": int(prediction[0])}
+            return result
+        except ValueError:
+            return "Enter a numerical value as years of experience"
+    else:
+        return"Bad Request"
 
 
 if __name__ == "__main__":

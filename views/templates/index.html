@@ -17,11 +17,11 @@
 
 <body>
     <div class="bg-image">
-        <form method="POST" name="myform" onsubmit="return validateform()">
+        <form method="GET" name="myform">
             <input name="yrsOfExperience" type="text" class="bg-box" placeholder="Enter the years of experience">
-            <button type="submit" class="button"> Predict Salary </button>
+            <button type="button" class="button" name="myform" onclick="return validateform()"> Predict Salary </button>
         </form>
-        <!-- TODO : A popup that shows your salary -->
+        
     </div>
 </body>
 

@@ -1,0 +1,61 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .bg-image {
+    /* The image used */
+    margin: 0;
+    background-image: url("./bg.jpg");
+    height: 100%;
+    
+
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: fill;
+  }
+  
+  /* Position text in the middle of the page/image */
+  .bg-box {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    font-size: 30px;
+    text-align: start;
+    initial-value: "Enter the year of experiance";
+    font-family: 'Poppins', sans-serif;
+
+  }
+
+  button {
+    padding:10px;
+    border:none;
+    background-color:#3F51B5;
+    color:#fff;
+    font-weight:600;
+    border-radius:10px;
+    width:50%;
+    font-size : 20px;
+    top:63%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+
